@@ -9,16 +9,20 @@ async function main() {
   const users = await prisma.user.findMany();
 
   console.log("PROJECTS:", projects.length);
-  projects.forEach((p) => console.log(`- ${p.id}: ${p.name} (Org: ${p.organizationId})`));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  projects.forEach((p: any) => console.log(`- ${p.id}: ${p.name} (Org: ${p.organizationId})`));
   
   console.log("ORGS:", orgs.length);
-  orgs.forEach((o) => console.log(`- ${o.id}: ${o.name}`));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  orgs.forEach((o: any) => console.log(`- ${o.id}: ${o.name}`));
 
   console.log("TEAMS:", teams.length);
-  teams.forEach((t) => console.log(`- ${t.id}: ${t.name}`));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  teams.forEach((t: any) => console.log(`- ${t.id}: ${t.name}`));
 
   console.log("USERS:", users.length);
-  users.forEach((u) => console.log(`- ${u.id}: ${u.name} (${u.email}) Org: ${u.organizationId}`));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  users.forEach((u: any) => console.log(`- ${u.id}: ${u.name} (${u.email}) Org: ${u.organizationId}`));
 }
 
 main().catch(console.error).finally(() => prisma.$disconnect());
