@@ -8,11 +8,11 @@ const prisma = new PrismaClient();
 // POST — register via invitation token
 export async function POST(
   request: Request,
-  { params }: { params: { token: string } }
+  { params }: { params: Promise<{ token: string }> }
 ) {
   try {
     const { name, email, password } = await request.json();
-    const { token } = params;
+    const { token } = await params;
 
     const invitation = await prisma.invitation.findUnique({
       where: { token },
