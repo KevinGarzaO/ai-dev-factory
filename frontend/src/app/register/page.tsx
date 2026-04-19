@@ -44,33 +44,33 @@ export default function RegisterPage() {
       {/* LEFT PANEL - Branding */}
       <div style={{
         flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "60px",
-        background: "linear-gradient(135deg, #0d0e14 0%, #0b1a2e 50%, #051225 100%)",
-        borderRight: "1px solid rgba(69,243,255,0.1)", position: "relative", overflow: "hidden"
+        background: "linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #0f172a 100%)",
+        borderRight: "1px solid rgba(78,204,163,0.1)", position: "relative", overflow: "hidden"
       }}>
-        <div style={{ position: "absolute", width: "350px", height: "350px", background: "radial-gradient(circle, rgba(69,243,255,0.12) 0%, transparent 70%)", top: "-80px", left: "-80px", borderRadius: "50%" }}></div>
-        <div style={{ position: "absolute", width: "300px", height: "300px", background: "radial-gradient(circle, rgba(138,43,226,0.1) 0%, transparent 70%)", bottom: "-60px", right: "-60px", borderRadius: "50%" }}></div>
+        <div style={{ position: "absolute", width: "350px", height: "350px", background: "radial-gradient(circle, rgba(78,204,163,0.12) 0%, transparent 70%)", top: "-80px", left: "-80px", borderRadius: "50%" }}></div>
+        <div style={{ position: "absolute", width: "300px", height: "300px", background: "radial-gradient(circle, rgba(78,204,163,0.1) 0%, transparent 70%)", bottom: "-60px", right: "-60px", borderRadius: "50%" }}></div>
 
         <div style={{ position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "48px" }}>
-            <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "linear-gradient(135deg, #45f3ff, #1192ff)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.4rem" }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "linear-gradient(135deg, #4ECCA3, #10b981)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.4rem" }}>
               <i className="fa-solid fa-code-branch" style={{ color: "#fff" }}></i>
             </div>
             <div>
-              <h1 style={{ fontSize: "1.5rem", fontWeight: 700, background: "linear-gradient(90deg, #fff, #45f3ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI DevOps Factory</h1>
-              <p style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "2px" }}>Plataforma Autónoma para Equipos de Desarrollo</p>
+              <h1 style={{ fontSize: "1.5rem", fontWeight: 700, background: "linear-gradient(90deg, #fff, #4ECCA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>SpecForge-TX</h1>
+              <p style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "2px" }}>SDD para builders latinos</p>
             </div>
           </div>
 
           <h2 style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.2, marginBottom: "20px", color: "#fff" }}>
-            Tu empresa, tu equipo, <span style={{ color: "var(--primary)" }}>potenciado por IA</span>
+            Tu proyecto. Tu metodología. <span style={{ color: "var(--primary)" }}>Tu agente.</span>
           </h2>
           <p style={{ color: "var(--text-muted)", fontSize: "1rem", lineHeight: 1.6, marginBottom: "40px" }}>
-            En minutos tendrás tu espacio de trabajo listo con proyectos, sprints y un equipo de agentes de IA listos para desarrollar software.
+            En 1 comando tienes todo listo para desarrollar con IA y metodología SDD.
           </p>
 
-          <div style={{ background: "rgba(69,243,255,0.04)", border: "1px solid rgba(69,243,255,0.15)", borderRadius: "12px", padding: "24px" }}>
-            <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: "16px", textTransform: "uppercase", letterSpacing: "1px" }}>Lo que se crea automáticamente:</p>
-            {["Organización empresarial", "Equipo por defecto", "Proyecto inicial", "Sprint 1 listo para usar", "Agente IA configurado"].map(item => (
+          <div style={{ background: "rgba(78,204,163,0.04)", border: "1px solid rgba(78,204,163,0.15)", borderRadius: "12px", padding: "24px" }}>
+            <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: "16px", textTransform: "uppercase", letterSpacing: "1px" }}>LO QUE OBTIENES:</p>
+            {["Metodología SDD instalada", "Slash commands configurados", "Mapa del proyecto generado", "Tasks sincronizadas", "RAG index listo"].map(item => (
               <div key={item} style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
                 <i className="fa-solid fa-circle-check" style={{ color: "var(--success)", fontSize: "0.9rem" }}></i>
                 <span style={{ fontSize: "0.9rem", color: "#fff" }}>{item}</span>
@@ -83,8 +83,8 @@ export default function RegisterPage() {
       {/* RIGHT PANEL - Form */}
       <div style={{ width: "520px", display: "flex", flexDirection: "column", justifyContent: "center", padding: "60px", background: "var(--bg-color)", flexShrink: 0, overflowY: "auto" }}>
         <div style={{ marginBottom: "36px" }}>
-          <h2 style={{ fontSize: "1.8rem", fontWeight: 700, marginBottom: "8px" }}>Crea tu empresa</h2>
-          <p style={{ color: "var(--text-muted)" }}>Configura tu espacio de trabajo en segundos</p>
+          <h2 style={{ fontSize: "1.8rem", fontWeight: 700, marginBottom: "8px" }}>Únete como builder</h2>
+          <p style={{ color: "var(--text-muted)" }}>Configura tu workspace en segundos</p>
         </div>
 
         {error && (
@@ -96,21 +96,21 @@ export default function RegisterPage() {
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
           <div>
             <label style={{ fontSize: "0.85rem", color: "var(--text-muted)", display: "block", marginBottom: "8px" }}>
-              <i className="fa-solid fa-building" style={{ marginRight: "6px", color: "var(--primary)" }}></i>Nombre de la Empresa / Workspace
+              <i className="fa-solid fa-folder" style={{ marginRight: "6px", color: "var(--primary)" }}></i>Nombre de tu proyecto o workspace
             </label>
-            <input required type="text" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.companyName} onChange={e => setForm({ ...form, companyName: e.target.value })} placeholder="ej. Acme Corp" />
+            <input required type="text" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.companyName} onChange={e => setForm({ ...form, companyName: e.target.value })} placeholder="ej. mi-proyecto" />
           </div>
           <div>
             <label style={{ fontSize: "0.85rem", color: "var(--text-muted)", display: "block", marginBottom: "8px" }}>
-              <i className="fa-solid fa-user" style={{ marginRight: "6px", color: "var(--primary)" }}></i>Tu Nombre
+              <i className="fa-solid fa-user" style={{ marginRight: "6px", color: "var(--primary)" }}></i>Tu nombre, builder
             </label>
-            <input required type="text" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Juan Pérez" />
+            <input required type="text" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Tu nombre" />
           </div>
           <div>
             <label style={{ fontSize: "0.85rem", color: "var(--text-muted)", display: "block", marginBottom: "8px" }}>
               <i className="fa-solid fa-envelope" style={{ marginRight: "6px", color: "var(--primary)" }}></i>Correo Electrónico
             </label>
-            <input required type="email" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="juan@empresa.com" />
+            <input required type="email" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="tu@email.com" />
           </div>
           <div>
             <label style={{ fontSize: "0.85rem", color: "var(--text-muted)", display: "block", marginBottom: "8px" }}>
@@ -119,12 +119,12 @@ export default function RegisterPage() {
             <input required type="password" className="wi-select" style={{ width: "100%", padding: "14px 16px" }} value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} placeholder="••••••••" minLength={8} />
           </div>
           <button type="submit" className="action-btn" style={{ padding: "16px", fontSize: "1rem", marginTop: "8px", width: "100%" }} disabled={loading}>
-            {loading ? <><i className="fa-solid fa-circle-notch fa-spin"></i> Creando workspace...</> : <><i className="fa-solid fa-rocket"></i> Crear Workspace Gratis</>}
+            {loading ? <><i className="fa-solid fa-circle-notch fa-spin"></i> Creando workspace...</> : <><i className="fa-solid fa-rocket"></i> Crear mi workspace gratis 🥑</>}
           </button>
         </form>
 
         <p style={{ marginTop: "28px", fontSize: "0.9rem", color: "var(--text-muted)", textAlign: "center" }}>
-          ¿Ya tienes cuenta? <Link href="/login" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600 }}>Iniciar Sesión →</Link>
+          ¿Ya eres builder? <Link href="/login" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600 }}>Inicia sesión →</Link>
         </p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 {
-  "name": "web",
+  "name": "specforge-tx-dashboard",
   "version": "0.1.0",
+  "description": "SpecForge-TX Dashboard - SDD Task Board for AI-Powered Development",
   "private": true,
   "scripts": {
     "dev": "next dev",

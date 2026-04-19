@@ -1,38 +1,21 @@
 {
-  "name": "ai-dev-factory",
+  "name": "specforge-tx-dashboard",
   "version": "1.0.0",
-  "main": "agent.ts",
-  "description": "Un agente autónomo inteligente que utiliza la API de Anthropic (Claude) para resolver tareas complejas",
+  "description": "SpecForge-TX Dashboard - Monorepo",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "start": "tsx server.ts",
-    "dev": "tsx server.ts",
-    "server": "tsx server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "start": "npm run start --workspace=frontend"
   },
   "keywords": [
-    "ai",
-    "agent",
-    "anthropic",
-    "claude",
-    "autonomous",
-    "automation"
+    "specforge-tx",
+    "sdd",
+    "dashboard"
   ],
-  "author": "Tu nombre",
-  "license": "ISC",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.81.0",
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^4.22.1",
-    "jsonwebtoken": "^9.0.0"
-  },
-  "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.6",
-    "@types/jsonwebtoken": "^9.0.7",
-    "@types/node": "^20.0.0",
-    "tsx": "^4.21.0"
-  }
+  "author": "Transformateck",
+  "license": "MIT"
 }

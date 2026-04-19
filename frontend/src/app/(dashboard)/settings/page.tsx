@@ -14,7 +14,7 @@ type Invitation = { id: number; token: string; projectRole: string; project: { n
 const PROJECT_ROLES = ["Developer", "QA Engineer", "DevOps", "Designer", "Product Owner", "Scrum Master"];
 const ORG_ROLES = ["member", "project_admin"];
 
-const inputStyle = { width: "100%", padding: "10px 14px", background: "#0d0f1a", border: "1px solid rgba(69,243,255,0.2)", borderRadius: "8px", color: "#fff", fontSize: "0.9rem", outline: "none", boxSizing: "border-box" as const };
+const inputStyle = { width: "100%", padding: "10px 14px", background: "#0d0f1a", border: "1px solid rgba(78,204,163,0.2)", borderRadius: "8px", color: "#fff", fontSize: "0.9rem", outline: "none", boxSizing: "border-box" as const };
 const selectStyle = { ...inputStyle, cursor: "pointer" };
 const labelStyle = { fontSize: "0.82rem", color: "var(--text-muted)", display: "block", marginBottom: "6px" };
 
@@ -173,7 +173,7 @@ export default function SettingsPage() {
   };
 
   const navItem = (id: typeof section, label: string, icon: string) => (
-    <button key={id} onClick={() => setSection(id)} style={{ display: "flex", alignItems: "center", gap: "10px", width: "100%", padding: "10px 14px", borderRadius: "8px", border: "none", cursor: "pointer", textAlign: "left", fontSize: "0.88rem", background: section === id ? "rgba(69,243,255,0.1)" : "transparent", color: section === id ? "var(--primary)" : "var(--text-muted)", fontWeight: section === id ? 600 : 400 }}>
+    <button key={id} onClick={() => setSection(id)} style={{ display: "flex", alignItems: "center", gap: "10px", width: "100%", padding: "10px 14px", borderRadius: "8px", border: "none", cursor: "pointer", textAlign: "left", fontSize: "0.88rem", background: section === id ? "rgba(78,204,163,0.1)" : "transparent", color: section === id ? "var(--primary)" : "var(--text-muted)", fontWeight: section === id ? 600 : 400 }}>
       <i className={`fa-solid ${icon}`} style={{ width: "16px" }}></i>{label}
     </button>
   );
@@ -238,7 +238,7 @@ export default function SettingsPage() {
           <div style={{ maxWidth: "700px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
                <h2 style={{ fontSize: "1.6rem", fontWeight: 700 }}>Detalles del Proyecto</h2>
-               <span style={{ fontSize: "0.75rem", padding: "2px 8px", background: "rgba(69,243,255,0.1)", color: "var(--primary)", borderRadius: "4px", border: "1px solid rgba(69,243,255,0.2)" }}>ID: {selectedProject.id}</span>
+               <span style={{ fontSize: "0.75rem", padding: "2px 8px", background: "rgba(78,204,163,0.1)", color: "var(--primary)", borderRadius: "4px", border: "1px solid rgba(78,204,163,0.2)" }}>ID: {selectedProject.id}</span>
             </div>
             <p style={{ color: "var(--text-muted)", marginBottom: "32px" }}>Configura la información básica y administradores de {selectedProject.name}.</p>
 
@@ -304,7 +304,7 @@ export default function SettingsPage() {
                       <tr key={pt.id} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                         <td style={{ padding: "16px 20px" }}>
                           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                            <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: "linear-gradient(135deg, rgba(69,243,255,0.2), rgba(124,58,237,0.2))", border: "1px solid rgba(69,243,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: "linear-gradient(135deg, rgba(78,204,163,0.2), rgba(124,58,237,0.2))", border: "1px solid rgba(78,204,163,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                               <i className="fa-solid fa-users" style={{ color: "var(--primary)", fontSize: "0.85rem" }}></i>
                             </div>
                             <span style={{ fontWeight: 600 }}>{pt.team.name}</span>
@@ -364,7 +364,7 @@ export default function SettingsPage() {
                       </td>
                       <td style={{ padding: "14px 20px", color: "var(--text-muted)", fontSize: "0.85rem" }}>{m.user.email}</td>
                       <td style={{ padding: "14px 20px", fontSize: "0.85rem", color: "var(--text-muted)" }}>{m.team?.name || "—"}</td>
-                      <td style={{ padding: "14px 20px" }}><span style={{ fontSize: "0.75rem", padding: "3px 10px", borderRadius: "10px", background: "rgba(69,243,255,0.08)", color: "var(--primary)", border: "1px solid rgba(69,243,255,0.15)" }}>{m.role}</span></td>
+                      <td style={{ padding: "14px 20px" }}><span style={{ fontSize: "0.75rem", padding: "3px 10px", borderRadius: "10px", background: "rgba(78,204,163,0.08)", color: "var(--primary)", border: "1px solid rgba(78,204,163,0.15)" }}>{m.role}</span></td>
                     </tr>
                   ))}
                   {!allMembers.length && <tr><td colSpan={4} style={{ padding: "40px", textAlign: "center", color: "var(--text-muted)" }}>Sin miembros todavía.</td></tr>}
@@ -395,12 +395,12 @@ export default function SettingsPage() {
                       <td style={{ padding: "14px 20px", fontSize: "0.85rem" }}>{inv.projectRole}</td>
                       <td style={{ padding: "14px 20px", fontSize: "0.82rem", color: "var(--text-muted)" }}>{new Date(inv.createdAt).toLocaleDateString("es-MX")}</td>
                       <td style={{ padding: "14px 20px" }}>
-                        <span style={{ fontSize: "0.75rem", padding: "3px 10px", borderRadius: "10px", background: inv.usedAt ? "rgba(255,95,86,0.1)" : "rgba(69,243,255,0.08)", color: inv.usedAt ? "var(--danger)" : "var(--success)", border: `1px solid ${inv.usedAt ? "rgba(255,95,86,0.2)" : "rgba(69,243,255,0.2)"}` }}>
+                        <span style={{ fontSize: "0.75rem", padding: "3px 10px", borderRadius: "10px", background: inv.usedAt ? "rgba(255,95,86,0.1)" : "rgba(78,204,163,0.08)", color: inv.usedAt ? "var(--danger)" : "var(--success)", border: `1px solid ${inv.usedAt ? "rgba(255,95,86,0.2)" : "rgba(78,204,163,0.2)"}` }}>
                           {inv.usedAt ? "Usado" : "Pendiente"}
                         </span>
                       </td>
                       <td style={{ padding: "14px 20px" }}>
-                        <button onClick={() => copyLink(`${window.location.origin}/invite/${inv.token}`)} style={{ background: "rgba(69,243,255,0.08)", border: "1px solid rgba(69,243,255,0.2)", color: "var(--primary)", padding: "5px 12px", borderRadius: "6px", cursor: "pointer", fontSize: "0.78rem" }}>
+                        <button onClick={() => copyLink(`${window.location.origin}/invite/${inv.token}`)} style={{ background: "rgba(78,204,163,0.08)", border: "1px solid rgba(78,204,163,0.2)", color: "var(--primary)", padding: "5px 12px", borderRadius: "6px", cursor: "pointer", fontSize: "0.78rem" }}>
                           <i className="fa-solid fa-copy" style={{ marginRight: "5px" }}></i>Copiar
                         </button>
                       </td>
@@ -476,7 +476,7 @@ export default function SettingsPage() {
       {/* MODAL: New Project */}
       {showProjectModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
-          <div style={{ padding: "32px", width: "420px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(69,243,255,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
+          <div style={{ padding: "32px", width: "420px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(78,204,163,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
             <h3 style={{ marginBottom: "20px" }}><i className="fa-solid fa-folder-plus" style={{ color: "var(--primary)", marginRight: "10px" }}></i>Nuevo Proyecto</h3>
             <input type="text" style={inputStyle} placeholder="Nombre del proyecto" value={newProjectName} onChange={e => setNewProjectName(e.target.value)} onKeyDown={e => e.key === "Enter" && createProject()} />
             <div style={{ display: "flex", gap: "12px", marginTop: "20px" }}>
@@ -490,7 +490,7 @@ export default function SettingsPage() {
       {/* MODAL: New Team */}
       {showTeamModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
-          <div style={{ padding: "32px", width: "420px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(69,243,255,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
+          <div style={{ padding: "32px", width: "420px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(78,204,163,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
             <h3 style={{ marginBottom: "20px" }}><i className="fa-solid fa-users" style={{ color: "var(--primary)", marginRight: "10px" }}></i>Nuevo Equipo en <span style={{ color: "var(--primary)" }}>{selectedProject?.name}</span></h3>
             <input type="text" style={inputStyle} placeholder="ej. Equipo Backend, Mobile Team..." value={newTeamName} onChange={e => setNewTeamName(e.target.value)} onKeyDown={e => e.key === "Enter" && createTeam()} />
             <div style={{ display: "flex", gap: "12px", marginTop: "20px" }}>
@@ -504,12 +504,12 @@ export default function SettingsPage() {
       {/* MODAL: Invite */}
       {showInvModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
-          <div style={{ padding: "32px", width: "480px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(69,243,255,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
+          <div style={{ padding: "32px", width: "480px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(78,204,163,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
             <h3 style={{ marginBottom: "20px" }}><i className="fa-solid fa-user-plus" style={{ color: "var(--primary)", marginRight: "10px" }}></i>Invitar Persona</h3>
             {newLink ? (
               <div>
                 <p style={{ color: "var(--text-muted)", marginBottom: "16px" }}>Comparte este link único. Expira en 7 días.</p>
-                <div style={{ background: "rgba(69,243,255,0.06)", border: "1px solid rgba(69,243,255,0.2)", borderRadius: "8px", padding: "12px 16px", fontFamily: "monospace", fontSize: "0.8rem", wordBreak: "break-all", color: "var(--primary)", marginBottom: "16px" }}>{newLink}</div>
+                <div style={{ background: "rgba(78,204,163,0.06)", border: "1px solid rgba(78,204,163,0.2)", borderRadius: "8px", padding: "12px 16px", fontFamily: "monospace", fontSize: "0.8rem", wordBreak: "break-all", color: "var(--primary)", marginBottom: "16px" }}>{newLink}</div>
                 <button className="action-btn" style={{ width: "100%", padding: "12px" }} onClick={() => copyLink(newLink)}><i className={`fa-solid ${linkCopied ? "fa-check" : "fa-copy"}`} style={{ marginRight: "6px" }}></i>{linkCopied ? "¡Copiado!" : "Copiar Link"}</button>
                 <button style={{ width: "100%", marginTop: "10px", padding: "10px", background: "transparent", border: "none", color: "var(--text-muted)", cursor: "pointer" }} onClick={() => { setShowInvModal(false); setNewLink(""); }}>Cerrar</button>
               </div>
@@ -547,7 +547,7 @@ export default function SettingsPage() {
       {/* MODAL: New Sprint */}
       {showSprintModal && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
-          <div style={{ padding: "32px", width: "450px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(69,243,255,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
+          <div style={{ padding: "32px", width: "450px", background: "#1a1d2e", borderRadius: "16px", border: "1px solid rgba(78,204,163,0.15)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
             <h3 style={{ marginBottom: "20px" }}><i className="fa-solid fa-calendar-plus" style={{ color: "var(--primary)", marginRight: "10px" }}></i>Nueva Iteración</h3>
             
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>

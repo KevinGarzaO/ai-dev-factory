@@ -80,19 +80,19 @@ export default function InvitePage() {
   return (
     <div style={{ display: "flex", height: "100vh", width: "100vw", overflow: "hidden" }}>
       {/* Left branding */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "60px", background: "linear-gradient(135deg, #0d0e14 0%, #0b1a2e 50%, #051225 100%)", borderRight: "1px solid rgba(69,243,255,0.1)", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", width: "350px", height: "350px", background: "radial-gradient(circle, rgba(69,243,255,0.12) 0%, transparent 70%)", top: "-80px", left: "-80px", borderRadius: "50%" }}></div>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "60px", background: "linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #0f172a 100%)", borderRight: "1px solid rgba(78,204,163,0.1)", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", width: "350px", height: "350px", background: "radial-gradient(circle, rgba(78,204,163,0.12) 0%, transparent 70%)", top: "-80px", left: "-80px", borderRadius: "50%" }}></div>
         <div style={{ position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "48px" }}>
-            <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "linear-gradient(135deg, #45f3ff, #1192ff)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "linear-gradient(135deg, #4ECCA3, #1192ff)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <i className="fa-solid fa-code-branch" style={{ color: "#fff", fontSize: "1.4rem" }}></i>
             </div>
             <div>
-              <h1 style={{ fontSize: "1.5rem", fontWeight: 700, background: "linear-gradient(90deg, #fff, #45f3ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI DevOps Factory</h1>
+              <h1 style={{ fontSize: "1.5rem", fontWeight: 700, background: "linear-gradient(90deg, #fff, #4ECCA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>SpecForge-TX</h1>
             </div>
           </div>
 
-          <div style={{ background: "rgba(69,243,255,0.06)", border: "1px solid rgba(69,243,255,0.2)", borderRadius: "16px", padding: "32px", marginBottom: "32px" }}>
+          <div style={{ background: "rgba(78,204,163,0.06)", border: "1px solid rgba(78,204,163,0.2)", borderRadius: "16px", padding: "32px", marginBottom: "32px" }}>
             <p style={{ fontSize: "0.75rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Fuiste invitado a unirte</p>
             <h2 style={{ fontSize: "2rem", fontWeight: 700, color: "#fff", marginBottom: "24px" }}>{info.orgName}</h2>
             {[
@@ -101,7 +101,7 @@ export default function InvitePage() {
               { label: "Tu Rol", value: info.projectRole, icon: "fa-id-badge" }
             ].filter(i => i.value).map(item => (
               <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
-                <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: "rgba(69,243,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: "rgba(78,204,163,0.08)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <i className={`fa-solid ${item.icon}`} style={{ color: "var(--primary)", fontSize: "0.85rem" }}></i>
                 </div>
                 <div>

@@ -44,7 +44,7 @@ export default function SprintMatrix() {
               <div key={story.id} className="taskboard-row">
                 <div className="tb-col-story">
                   <div className="story-card-vertical" onClick={() => setSelectedItem({ type: 'story', id: story.id })}>
-                    <h4><i className="fa-solid fa-book-open" style={{ color: "#45f3ff", marginRight: "4px" }}></i> {story.id} {story.title}</h4>
+                    <h4><i className="fa-solid fa-book-open" style={{ color: "#4ECCA3", marginRight: "4px" }}></i> {story.id} {story.title}</h4>
                     <div className="meta">
                       <span style={{ color: "var(--text-main)" }}>
                         <i className="fa-solid fa-circle" style={{ fontSize: "0.5rem", color: "var(--text-muted)" }}></i> {story.state}
@@ -85,7 +85,7 @@ export default function SprintMatrix() {
 }
 
 function MatrixCard({ task, storyId, setSelectedItem }: { task: Task, storyId: number, setSelectedItem: any }) {
-  const stateColor = task.state === 'Done' || task.state === 'Closed' ? '#3fb379' : (task.state === 'In Progress' ? '#ffbd2e' : '#45f3ff');
+  const stateColor = task.state === 'Done' || task.state === 'Closed' ? '#3fb379' : (task.state === 'In Progress' ? '#ffbd2e' : '#4ECCA3');
 
   return (
     <div className="matrix-card" style={{ borderLeftColor: stateColor }} onClick={(e) => { e.stopPropagation(); setSelectedItem({ type: 'task', id: task.id, parentId: storyId }); }}>

@@ -162,7 +162,7 @@ export default function WorkItemModal() {
                    <><i className="fa-solid fa-plus-circle" style={{ color: "var(--primary)" }}></i> NEW {formData.type?.toUpperCase()} *</>
                 ) : (
                   selectedItem.type === 'story' ? (
-                    <><i className="fa-solid fa-book-open" style={{ color: "#45f3ff" }}></i> USER STORY {formData.id}</>
+                    <><i className="fa-solid fa-book-open" style={{ color: "#4ECCA3" }}></i> USER STORY {formData.id}</>
                   ) : (
                     <><i className="fa-solid fa-check-square" style={{ color: "#ffbd2e" }}></i> TASK {formData.id}</>
                   )

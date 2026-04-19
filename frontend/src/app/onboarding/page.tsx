@@ -70,7 +70,7 @@ export default function OnboardingPage() {
     fontSize: "0.85rem", color: "var(--text-muted)", display: "block", marginBottom: "8px"
   };
 
-  const stepColors = ["#45f3ff", "#a78bfa", "#34d399"];
+  const stepColors = ["#4ECCA3", "#a78bfa", "#34d399"];
   const stepIcons = ["fa-users", "fa-folder-open", "fa-id-badge"];
 
   return (
@@ -84,7 +84,7 @@ export default function OnboardingPage() {
         </div>
 
         {/* Icon */}
-        <div style={{ width: "56px", height: "56px", borderRadius: "14px", background: `rgba(69,243,255,0.08)`, border: `1px solid rgba(69,243,255,0.2)`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
+        <div style={{ width: "56px", height: "56px", borderRadius: "14px", background: `rgba(78,204,163,0.08)`, border: `1px solid rgba(78,204,163,0.2)`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
           <i className={`fa-solid ${stepIcons[step - 1]}`} style={{ color: stepColors[step - 1], fontSize: "1.4rem" }}></i>
         </div>
 

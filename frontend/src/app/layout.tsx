@@ -9,7 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'AI DevOps Factory',
+  title: 'SpecForge-TX',
   description: 'Autonomous DevOps Factory Platform',
 };
 
