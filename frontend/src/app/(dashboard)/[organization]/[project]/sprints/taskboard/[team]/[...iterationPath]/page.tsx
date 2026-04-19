@@ -1,6 +1,6 @@
 import SprintMatrix from "@/components/SprintMatrix";
 
-export default function EnterpriseSprintPage({ params }: { params: Promise<{ organization: string, project: string, team: string, iterationPath: string[] }> }) {
+export default async function EnterpriseSprintPage({ params }: { params: Promise<{ organization: string, project: string, team: string, iterationPath: string[] }> }) {
   const { organization, project, team, iterationPath } = await params;
   // In a real database, we would use params.organization and params.iterationPath 
   // to fetch the specific tasks for this Sprint.
