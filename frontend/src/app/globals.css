@@ -262,10 +262,21 @@ body {
   color: var(--primary);
 }
 
-.sidebar-nav-item .icon {
+.sidebar-nav-item .icon,
+.sidebar-nav-item .nav-icon {
   font-size: 14px;
   width: 18px;
   text-align: center;
+  color: #F0F6FC;
+  opacity: 0.7;
+}
+
+.sidebar-nav-item:hover .icon,
+.sidebar-nav-item:hover .nav-icon,
+.sidebar-nav-item.active .icon,
+.sidebar-nav-item.active .nav-icon {
+  color: #4ECCA3;
+  opacity: 1;
 }
 
 .sidebar-nav-item .label {
