@@ -1,10 +1,11 @@
 import BacklogTable from "@/components/BacklogTable";
 import Toolbar from "@/components/Toolbar";
 
-export default function EnterpriseBacklogPage({ params }: { params: { organization: string, project: string, team: string } }) {
-  const orgName = decodeURIComponent(params.organization || 'SFTX');
-  const projectName = decodeURIComponent(params.project || 'CLI');
-  const teamName = decodeURIComponent(params.team || 'Default');
+export default function EnterpriseBacklogPage({ params }: { params: Promise<{ organization: string, project: string, team: string }> }) {
+  const { organization, project, team } = await params;
+  const orgName = decodeURIComponent(organization || 'SFTX');
+  const projectName = decodeURIComponent(project || 'CLI');
+  const teamName = decodeURIComponent(team || 'Default');
 
   return (
     <>
