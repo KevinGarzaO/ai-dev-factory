@@ -5,45 +5,38 @@ const prisma = new PrismaClient();
 async function main() {
   console.log("Seeding database...");
 
-  // Create Organization
+  // Step 1: Create Organization
   const org = await prisma.organization.create({
+    data: { name: "Transformateck" }
+  });
+
+  // Step 2: Create Team
+  const team = await prisma.team.create({
     data: {
-      name: "Transformateck",
-      teams: {
+      name: "Cargalo Team APP",
+      organizationId: org.id
+    }
+  });
+
+  // Step 3: Create Project
+  const project = await prisma.project.create({
+    data: {
+      name: "Cárgalo",
+      organizationId: org.id,
+      teamId: team.id,
+      sprints: {
         create: [
-          {
-            name: "Cargalo Team APP",
-            projects: {
-              create: [
-                {
-                  name: "Cárgalo",
-                  sprints: {
-                    create: [
-                      { name: "Sprint 19" }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
+          { name: "Sprint 19" }
         ]
       }
     },
     include: {
-      teams: {
-        include: {
-          projects: {
-            include: {
-              sprints: true
-            }
-          }
-        }
-      }
+      sprints: true
     }
   });
 
-  const sprintId = org.teams[0].projects[0].sprints[0].id;
-  const projectId = org.teams[0].projects[0].id;
+  const sprintId = project.sprints[0].id;
+  const projectId = project.id;
 
   // Create Parent User Story
   const story = await prisma.workItem.create({
